@@ -216,8 +216,8 @@ show(0);
 
 // === CONTATTI ===
 // Numero in formato internazionale SENZA + e senza spazi. Es.: 393331234567
-const WHATSAPP_NUMBER = '393XXXXXXXXX';
-const CONTACT_EMAIL = 'tuamail@example.com';
+const WHATSAPP_NUMBER = '393403951866';
+const CONTACT_EMAIL = 'altramobilita@gmail.com';
 
 function friendly(name,value){
  const m={

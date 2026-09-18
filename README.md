@@ -20,11 +20,11 @@ python3 -m http.server 8000
 
 ## Configurazione contatti
 
-In `script.js`, imposta i valori reali al posto dei placeholder:
+I contatti sono impostati in `script.js`:
 
 ```js
-const WHATSAPP_NUMBER = '393XXXXXXXXX'; // formato internazionale, senza + e senza spazi
-const CONTACT_EMAIL = 'tuamail@example.com';
+const WHATSAPP_NUMBER = '393403951866'; // formato internazionale, senza + e senza spazi
+const CONTACT_EMAIL = 'altramobilita@gmail.com';
 ```
 
 ## Ramo implementato
