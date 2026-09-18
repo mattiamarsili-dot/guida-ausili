@@ -98,8 +98,9 @@ footer.site-footer{margin-top:52px;padding-top:22px;border-top:1px solid var(--l
  .wrap{padding:0 14px 48px}
  .site-header{margin:0 -14px 22px;padding:14px 14px;grid-template-columns:auto 1fr auto}
  .brand-ui{font-size:16px}
- .config-link{font-size:12px}
  article.product{flex-direction:column}
  .product-photo{width:100%;flex-basis:auto;height:190px}
  .spec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ td.model-cell,th.model-col{max-width:132px;overflow:hidden;text-overflow:ellipsis}
+ td.model-cell a{display:block;overflow:hidden;text-overflow:ellipsis}
 }
