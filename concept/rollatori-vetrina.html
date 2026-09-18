@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rollator e Deambulatori — Vetrina</title>
+<meta name="description" content="Campione di direzione grafica: vetrina prodotto stile negozio specializzato per la categoria Rollator e Deambulatori Adulto.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=IBM+Plex+Mono:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#E4E4E0;
+  --paper-deep:#D3D3CD;
+  --card:#F7F7F4;
+  --ink:#241F19;
+  --ink-soft:#584F42;
+  --line:#D9D0BE;
+  --accent:#D65B26;
+  --accent-deep:#A8431A;
+  --accent-soft:#FBE0CC;
+  --ok:#2C6539;
+  --ok-soft:#E4F0E1;
+  --shadow:0 10px 26px rgba(38,28,14,.10);
+}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--paper);color:var(--ink);font-family:'Archivo',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+body{-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px 80px}
+
+.banner{background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:10px 20px;text-align:center}
+.banner strong{color:#fff}
+
+header.top{padding:36px 0 26px;border-bottom:3px solid var(--ink)}
+.eyebrow{font-weight:800;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent-deep);margin:0 0 10px}
+h1{margin:0 0 10px;font-size:clamp(28px,4.4vw,40px);font-weight:900;letter-spacing:-.01em;line-height:1.05}
+.lede{margin:0;font-size:15.5px;color:var(--ink-soft);max-width:640px;line-height:1.55}
+
+.sub{margin-top:44px}
+.sub-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;border-bottom:2px solid var(--line);padding-bottom:12px}
+.sub-head h2{margin:0;font-size:21px;font-weight:800}
+.sub-head p{margin:0;font-size:13.5px;color:var(--ink-soft)}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px}
+
+article.spec-card{position:relative;background:var(--card);border:1px solid var(--line);border-radius:4px;box-shadow:var(--shadow);overflow:hidden;display:flex;flex-direction:column}
+.card-fold{position:absolute;top:0;right:0;width:30px;height:30px;background:linear-gradient(135deg,transparent 50%,var(--paper-deep) 50%);border-left:1px solid var(--line);border-bottom:1px solid var(--line)}
+.card-fold::after{content:'';position:absolute;top:6px;right:6px;width:10px;height:10px;border-radius:2px;background:var(--paper);box-shadow:0 1px 2px rgba(0,0,0,.15)}
+
+.card-media{height:168px;background:var(--paper-deep);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.card-media img{width:100%;height:100%;object-fit:contain;display:block;padding:10px}
+
+.card-body{padding:18px 18px 16px;display:flex;flex-direction:column;gap:14px;flex:1}
+.card-eyebrow{margin:0;font-size:11.5px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft)}
+.card-body h3{margin:0;font-size:19px;font-weight:800;line-height:1.15}
+
+.badge-row{display:flex;gap:10px}
+.badge-dial{flex:1;display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 4px;background:var(--paper);border-radius:4px}
+.dial-ring{position:relative;width:52px;height:52px;border-radius:50%;border:3px solid var(--accent);display:grid;place-items:center;background:var(--card)}
+.dial-ring::before{content:'';position:absolute;top:-3px;left:50%;transform:translateX(-50%);width:2px;height:6px;background:var(--accent-deep)}
+.dial-num{font-family:'IBM Plex Mono',monospace;font-weight:700;font-size:13px;line-height:1;color:var(--ink)}
+.dial-unit{font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--ink-soft);margin-top:1px}
+.badge-label{font-size:11px;font-weight:700;color:var(--ink-soft);text-align:center;letter-spacing:.01em}
+
+.extra-specs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-soft)}
+.extra-specs li{display:flex;justify-content:space-between;gap:10px;border-bottom:1px dashed var(--line);padding-bottom:6px}
+.extra-specs li span.v{font-family:'IBM Plex Mono',monospace;font-weight:600;color:var(--ink);text-align:right}
+
+.tag-row{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-size:11px;font-weight:700;padding:4px 9px;border-radius:999px;background:var(--ok-soft);color:var(--ok)}
+.tag.neutral{background:var(--paper-deep);color:var(--ink-soft)}
+
+.card-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:10px;padding-top:12px;border-top:1px solid var(--line)}
+.brochure-link{display:inline-flex;align-items:center;gap:5px;font-size:13px;font-weight:700;color:var(--accent-deep);text-decoration:none}
+.brochure-link:hover{text-decoration:underline}
+.brochure-link svg{width:12px;height:12px}
+.price{font-family:'IBM Plex Mono',monospace;font-size:12.5px;color:var(--ink-soft)}
+.price strong{color:var(--ink);font-weight:700}
+
+details.data-table{margin-top:22px;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+details.data-table summary{cursor:pointer;padding:14px 18px;font-weight:700;font-size:13.5px;list-style:none;display:flex;align-items:center;gap:8px;color:var(--ink)}
+details.data-table summary::-webkit-details-marker{display:none}
+details.data-table summary::before{content:'+';font-family:'IBM Plex Mono',monospace;font-weight:700;color:var(--accent-deep);width:14px}
+details.data-table[open] summary::before{content:'–'}
+.table-scroll{overflow-x:auto;border-top:1px solid var(--line);padding-top:4px}
+table{border-collapse:collapse;width:100%;min-width:680px}
+th,td{padding:10px 16px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap;font-size:13.5px}
+thead th{background:var(--paper);font-weight:700;font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink-soft)}
+td.model-cell{font-weight:700}
+tbody tr:last-child td{border-bottom:0}
+td a.brochure-link{white-space:nowrap}
+
+footer.site-footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);font-size:12px;color:var(--ink-soft);line-height:1.5}
+
+@media(max-width:640px){
+  .wrap{padding:0 14px 60px}
+  .sub-head{flex-direction:column;align-items:flex-start;gap:6px}
+  .grid{grid-template-columns:1fr}
+  .badge-row{gap:8px}
+  .dial-ring{width:46px;height:46px}
+}
+</style>
+</head>
+<body>
+
+<div class="banner">Campione di direzione grafica — esplorazione, non sostituisce la pagina live · confronta con <a href="../catalogo/rollatori.html" style="color:#fff">la versione attuale</a></div>
+
+<div class="wrap">
+
+  <header class="top">
+    <p class="eyebrow">Catalogo Altra Mobilità</p>
+    <h1>Rollator e Deambulatori Adulto</h1>
+    <p class="lede">Confronto tecnico e schede dettagliate dei deambulatori a rotelle trattati in consulenza: modelli con supporti antibrachiali e modelli a presa bassa, a impugnatura standard.</p>
+  </header>
+
+  <section class="sub">
+    <div class="sub-head">
+      <h2>Con supporti antibrachiali</h2>
+      <p>Appoggio regolabile per l'avambraccio, per chi necessita di scarico su braccia e spalle superiore a un'impugnatura standard.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.allmobility.it/wp-content/uploads/2021/08/deambulatore-topro-viva7-antibra-1.jpg" alt="Deambulatore Topro Viva7 con supporti antibrachiali" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Topro</p>
+          <h3>Viva7 Antibrachiale</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">8,8</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">135</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">60</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Larghezza tra maniglie<span class="v">38 cm</span></li>
+            <li>Freno<span class="v">Stazionamento</span></li>
+          </ul>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-TOPRO-VIVA-7-TAURUS-NEURO.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Su <strong>richiesta</strong></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.allmobility.it/wp-content/uploads/2021/08/deambulatore-topro-taurus.jpg" alt="Deambulatore Topro Taurus con appoggi antibrachiali" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Topro</p>
+          <h3>Taurus Antibrachiale</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">18</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">150</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">66</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Altezza regolabile<span class="v">86,5–132 cm</span></li>
+            <li>Materiale telaio<span class="v">Alluminio</span></li>
+          </ul>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-TOPRO-VIVA-7-TAURUS-NEURO.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Su <strong>richiesta</strong></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.sunrisemedical.it/getmedia/cb08aaf9-1281-41d4-984e-e98d94fb14a5/Gemino-30-walker-product-front-view" alt="Gemino 30 Walker Rollator" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Sunrise Medical</p>
+          <h3>Gemino 30 Walker</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">10,9</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">150</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">61</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Diametro ruote<span class="v">200 × 36 mm</span></li>
+            <li>Portata cestino<span class="v">5 kg</span></li>
+          </ul>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Da <strong>€ 677</strong></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.sunrisemedical.it/getmedia/4f88812b-d7f4-4173-b592-6d2ba225f69d/gemino-60-walker-rollator-gallery-lifestyle?width=496" alt="Gemino 60 Walker Rollator" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Sunrise Medical</p>
+          <h3>Gemino 60 Walker</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">11,8</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">150</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">64</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Diametro ruote<span class="v">280 × 42 mm</span></li>
+            <li>Portata cestino<span class="v">10 kg</span></li>
+          </ul>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Da <strong>€ 782</strong></span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <details class="data-table">
+      <summary>Tabella dati completa — supporti antibrachiali</summary>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Modello</th><th>Produttore</th><th>Peso</th><th>Portata max</th><th>Larghezza</th><th>Altezza impugnature</th><th>Brochure</th></tr></thead>
+          <tbody>
+            <tr><td class="model-cell">Topro Viva7 Antibrachiale</td><td>Topro</td><td>8,8 kg</td><td>135 kg</td><td>60 cm</td><td>62 cm</td><td><a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-TOPRO-VIVA-7-TAURUS-NEURO.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+            <tr><td class="model-cell">Topro Taurus Antibrachiale</td><td>Topro</td><td>18 kg</td><td>150 kg</td><td>66 cm</td><td>86,5–132 cm</td><td><a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-TOPRO-VIVA-7-TAURUS-NEURO.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+            <tr><td class="model-cell">Gemino 30 Walker</td><td>Sunrise Medical</td><td>10,9 kg</td><td>150 kg</td><td>61 cm</td><td>98–111,5 cm</td><td><a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+            <tr><td class="model-cell">Gemino 60 Walker</td><td>Sunrise Medical</td><td>11,8 kg</td><td>150 kg</td><td>64 cm</td><td>98,5–115,5 cm</td><td><a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section class="sub">
+    <div class="sub-head">
+      <h2>A presa bassa (impugnatura standard)</h2>
+      <p>Impugnatura manuale tradizionale, senza appoggio per l'avambraccio: pi&ugrave; leggeri e compatti.</p>
+    </div>
+
+    <div class="grid">
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.allmobility.it/wp-content/uploads/2021/08/deambulatore-fusion.jpg" alt="Deambulatore carrozzina Fusion 2 in 1" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">AllMobility Trading</p>
+          <h3>Fusion 2 in 1</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">10,3</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">136</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">69</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Larghezza tra maniglie<span class="v">50 cm</span></li>
+            <li>Ruote<span class="v">Comfort-grip</span></li>
+          </ul>
+          <div class="tag-row"><span class="tag neutral">Funzione 2 in 1: deambulatore/carrozzina</span></div>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-FUSION-STREET-ROBUSTO.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Su <strong>richiesta</strong></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.allmobility.it/wp-content/uploads/2021/08/deambulatore-snellino.jpg" alt="Deambulatore Snellino" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">AllMobility Trading</p>
+          <h3>Snellino</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">5,5</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">100</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">54</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Altezza regolabile<span class="v">83,5–94,5 cm</span></li>
+            <li>Freno<span class="v">Una mano</span></li>
+          </ul>
+          <div class="tag-row"><span class="tag">Il più leggero della categoria</span></div>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-LIGHT-SNELLINO-PIUMA.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Su <strong>richiesta</strong></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.sunrisemedical.it/getmedia/30c45269-646f-4cba-85ce-042fa41361a6/gemino-30-m-parkinson-rollator-feature-comfort-version.jpg" alt="Gemino 30 Parkinson Rollator" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Sunrise Medical</p>
+          <h3>Gemino 30 Parkinson</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">7,6</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">130</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">60</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Diametro ruote<span class="v">200 × 36 mm</span></li>
+            <li>Portata cestino<span class="v">5 kg</span></li>
+          </ul>
+          <div class="tag-row"><span class="tag">Freno rallentamento + laser anti-freezing</span></div>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Da <strong>€ 840</strong></span>
+          </div>
+        </div>
+      </article>
+
+      <article class="spec-card">
+        <div class="card-fold" aria-hidden="true"></div>
+        <div class="card-media"><img src="https://www.sunrisemedical.it/getmedia/f8147c51-c8d5-492a-a448-58152a6c04cb/gemino-30-speedcontrol-rollator-speed-control-fr.jpg" alt="Gemino 30 SpeedControl Rollator" loading="lazy"></div>
+        <div class="card-body">
+          <p class="card-eyebrow">Sunrise Medical</p>
+          <h3>Gemino 30 SpeedControl</h3>
+          <div class="badge-row">
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">8,7</span><span class="dial-unit">kg</span></div><span class="badge-label">Peso</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">100</span><span class="dial-unit">kg</span></div><span class="badge-label">Portata</span></div>
+            <div class="badge-dial"><div class="dial-ring"><span class="dial-num">60</span><span class="dial-unit">cm</span></div><span class="badge-label">Larghezza</span></div>
+          </div>
+          <ul class="extra-specs">
+            <li>Diametro ruote<span class="v">200 × 36 mm</span></li>
+            <li>Frenata<span class="v">SpeedControl 3L</span></li>
+          </ul>
+          <div class="tag-row"><span class="tag">Ideale anche per riabilitazione</span></div>
+          <div class="card-foot">
+            <a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></a>
+            <span class="price">Da <strong>€ 690</strong></span>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <details class="data-table">
+      <summary>Tabella dati completa — presa bassa</summary>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th>Modello</th><th>Produttore</th><th>Peso</th><th>Portata max</th><th>Larghezza</th><th>Altezza impugnature</th><th>Brochure</th></tr></thead>
+          <tbody>
+            <tr><td class="model-cell">Fusion 2 in 1</td><td>AllMobility Trading</td><td>10,3 kg</td><td>136 kg</td><td>69 cm</td><td>51 cm</td><td><a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-FUSION-STREET-ROBUSTO.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+            <tr><td class="model-cell">Snellino</td><td>AllMobility Trading</td><td>5,5 kg</td><td>100 kg</td><td>54 cm</td><td>83,5–94,5 cm</td><td><a class="brochure-link" href="https://www.allmobility.it/wp-content/uploads/2021/08/Deambulatori-LIGHT-SNELLINO-PIUMA.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+            <tr><td class="model-cell">Gemino 30 Parkinson</td><td>Sunrise Medical</td><td>7,6 kg</td><td>130 kg</td><td>60 cm</td><td>78–100 cm</td><td><a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+            <tr><td class="model-cell">Gemino 30 SpeedControl</td><td>Sunrise Medical</td><td>8,7 kg</td><td>100 kg</td><td>60 cm</td><td>78–100 cm</td><td><a class="brochure-link" href="https://www.sunrisedice.com/asset-bank/assetfile/40979.pdf" target="_blank" rel="noopener">Brochure</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <footer class="site-footer">
+    <p>Specifiche, immagini e prezzi indicativi tratti dalle pagine ufficiali dei produttori/distributori (AllMobility, Sunrise Medical) a settembre 2026. Campione di direzione grafica — dati identici alla pagina live, presentazione in esplorazione.</p>
+  </footer>
+
+</div>
+</body>
+</html>
