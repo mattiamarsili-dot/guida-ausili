@@ -1,9 +1,11 @@
 :root{
  --navy:#0b2f6b;--teal:#13999d;--teal2:#0d8794;--teal-soft:#eaf8f7;
- --bg:#f3f8fa;--card:#fff;--text:#15365d;--muted:#718096;--line:#dbe5ec;
+ --bg:#f3f8fa;--card:#fff;--text:#15365d;--muted:#5a6e84;--line:#dbe5ec;
  --shadow:0 12px 34px rgba(26,58,92,.10);
  --tag-bg:var(--teal-soft);--tag-text:var(--teal2);
  --tag-neutral-bg:#edf3f6;--tag-neutral-text:var(--navy);
+ --success:#1c8a53;--success-soft:#e7f7ee;--success-border:#bfe6cf;
+ --spacing-xs:6px;--spacing-sm:10px;--spacing-md:16px;--spacing-lg:24px;
 }
 *{box-sizing:border-box}
 html,body{margin:0;min-height:100%;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--text)}
@@ -12,7 +14,7 @@ a{color:var(--teal2)}
 .wrap{max-width:1120px;margin:0 auto;padding:0 20px 64px}
 
 /* header */
-.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(12px);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid #edf2f5;margin:0 -20px 28px}
+.site-header{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);display:grid;grid-template-columns:auto 1fr auto;align-items:center;gap:14px;padding:16px 20px;border-bottom:1px solid #edf2f5;margin:0 -20px 28px}
 .back-link{display:flex;align-items:center;gap:6px;color:var(--navy);font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
 .back-link:hover{color:var(--teal2)}
 .brand-ui{display:flex;align-items:center;justify-content:center;gap:9px;font-size:19px;font-weight:850;color:var(--navy);white-space:nowrap}
@@ -51,6 +53,18 @@ th.model-col{background:var(--teal-soft)}
 td.model-cell{background:var(--card)}
 td.model-cell a{color:var(--navy);text-decoration:none}
 td.model-cell a:hover{color:var(--teal2)}
+
+/* best-value highlighting — computed from data-value/data-strategy, never hardcoded per product */
+td.is-best{background:var(--success-soft)}
+.cell-value{display:inline-flex;align-items:center;gap:6px}
+td.is-best .cell-value{font-weight:800;color:#136b3e}
+.best-check{width:13px;height:13px;flex:0 0 auto;color:var(--success)}
+.best-badge{display:inline-flex;align-items:center;font-size:10px;font-weight:800;color:var(--success);background:#fff;border:1px solid var(--success-border);border-radius:999px;padding:1px 7px;margin-left:2px;white-space:nowrap}
+.spec.is-best .v{color:var(--success);font-weight:800}
+.spec.is-best .k{color:#2c8a5c}
+.spec-best-badge{display:inline-flex;align-items:center;gap:3px;font-size:10.5px;font-weight:800;color:var(--success);margin-top:2px}
+.spec-best-badge svg{width:11px;height:11px}
+@media(max-width:720px){.best-badge{display:none}}
 .pdf-link{display:inline-flex;align-items:center;gap:5px;font-weight:700;text-decoration:none;color:var(--teal2)}
 .pdf-link:hover{text-decoration:underline}
 .pdf-link svg{width:12px;height:12px}
@@ -78,11 +92,17 @@ article.product{display:flex;gap:24px;background:var(--card);border:1px solid #e
 
 /* category hub cards */
 .hub-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:16px}
-.hub-card{display:block;background:var(--card);border:1px solid #e6edf2;border-radius:20px;padding:20px;box-shadow:var(--shadow);text-decoration:none;color:var(--text)}
-.hub-card h3{margin:0 0 6px;font-size:17px;font-weight:800;color:var(--navy)}
+.hub-card{display:block;background:var(--card);border:1px solid #e6edf2;border-radius:20px;padding:20px;box-shadow:var(--shadow);text-decoration:none;color:var(--text);transition:transform .15s,box-shadow .15s}
+.hub-card:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(26,58,92,.14)}
+.hub-card-head{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.hub-card .icon-tile{width:38px;height:38px;flex:0 0 auto;border-radius:11px;background:var(--teal-soft);color:var(--teal2);display:grid;place-items:center}
+.hub-card .icon-tile svg{width:20px;height:20px}
+.hub-card h2{margin:0;font-size:17px;font-weight:800;color:var(--navy)}
 .hub-card p{margin:0;font-size:13.5px;color:var(--muted);line-height:1.45}
 .hub-card .count{display:inline-block;margin-top:12px;font-size:12px;font-weight:700;color:var(--teal2)}
 .hub-card.soon{background:var(--bg);border-style:dashed;cursor:default}
+.hub-card.soon:hover{transform:none;box-shadow:none}
+.hub-card.soon .icon-tile{background:#e7edf1;color:var(--muted)}
 .hub-card.soon .count{color:var(--muted)}
 
 /* configurator cross-link */
