@@ -1,239 +1,48 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Configuratore Ausili - Motore V1</title>
-<link rel="stylesheet" href="style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Guida Ausili</title>
+<meta name="description" content="Guida Ausili di Altra Mobilità: consulenza personalizzata e catalogo prodotti per trovare l'ausilio per la mobilità più adatto a ogni esigenza.">
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
 <div class="wrap">
-<div class="card">
-<header class="app-header">
-  <div class="back-ui">←</div>
-  <div class="brand-ui"><span class="brand-logo">GA</span>Guida Ausili</div>
-  <div class="help-ui">ⓘ Aiuto</div>
-</header>
-<div class="app-body">
-<div class="top-progress">
-  <h1>Troviamo insieme la soluzione più adatta</h1>
-  <p class="small">Valutazione guidata • Tempo richiesto: circa 3–5 minuti</p>
-  <div class="progress"><div id="bar"></div></div>
-  <p class="small">Tocca una risposta per selezionarla: dove possibile, il form prosegue automaticamente.</p>
-</div>
 
-<form id="wizard">
-<section class="step active" data-step="0">
-<h2>Per iniziare</h2>
-<div class="row">
-<div class="field"><label>Nome</label><input name="firstName" type="text" required></div>
-<div class="field"><label>Cognome</label><input name="lastName" type="text" required></div>
-</div>
-<div class="field">
-<label>Stai cercando:</label>
-<div class="grid">
-<label class="option"><input type="radio" name="requestType" value="new" required> Un nuovo ausilio</label>
-<label class="option"><input type="radio" name="requestType" value="renewal"> Il rinnovo / sostituzione di un ausilio</label>
-</div>
-</div>
-<div class="actions"><span></span><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
+  <header class="site-header">
+    <span></span>
+    <div class="brand-ui"><span class="brand-logo">GA</span>Guida Ausili</div>
+    <span></span>
+  </header>
 
-<section class="step" data-step="1">
-<h2>Rinnovo dell'ausilio</h2>
-<div id="renewalBlock">
-<div class="field">
-<label>Qual è il motivo principale del rinnovo?</label>
-<div class="grid">
-<label class="option"><input type="radio" name="renewalReason" value="wear"> Usura / tempo trascorso</label>
-<label class="option"><input type="radio" name="renewalReason" value="changed"> Non più adeguato / mutate condizioni o esigenze</label>
-</div>
-</div>
-<div id="wearDetails" class="hidden">
-<div class="row">
-<div class="field"><label>Da quale anno utilizzi l'ausilio attuale?</label><input type="number" min="1990" max="2026" name="deviceYear" placeholder="Es. 2021"></div>
-<div class="field"><label>Come è stato ottenuto?</label>
-<select name="funding">
-<option value="">Seleziona</option><option value="asl">Fornitura ASL / SSN</option><option value="private">Acquisto privato</option><option value="unknown">Non lo so</option>
-</select></div>
-</div>
-</div>
-</div>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
+  <section class="hero">
+    <p class="eyebrow">Altra Mobilità</p>
+    <h1>Il tuo ausilio per la mobilità, con una guida al fianco</h1>
+    <p>Da anni affianchiamo pazienti e famiglie nella scelta dell'ausilio più adatto, con una consulenza personalizzata e indipendente dai singoli produttori. Lavoriamo con persone con ogni grado di disabilità fisica, dalle esigenze più semplici alle situazioni più complesse, confrontando più marchi per orientarle verso le soluzioni realmente disponibili sul mercato.</p>
+  </section>
 
-<section class="step" data-step="2">
-<h2>Tipologia di ausilio</h2>
-<div class="field">
-<label>Quale area ti interessa?</label>
-<div class="grid">
-<label class="option"><input type="radio" name="area" value="seated" required> Una soluzione per muoversi da seduto</label>
-<label class="option"><input type="radio" name="area" value="standing"> Una soluzione per muoversi / stare in piedi</label>
-<label class="option"><input type="radio" name="area" value="orthosis"> Un tutore / ortesi da indossare</label>
-</div>
-</div>
-<div id="otherAreaMsg" class="warn hidden">In questo prototipo è già implementato il ramo “mobilità seduta adulto”. Gli altri rami verranno aggiunti con lo stesso motore.</div>
-<div class="field">
-<label>La soluzione è destinata a:</label>
-<div class="grid">
-<label class="option"><input type="radio" name="ageGroup" value="adult" required> Adulto</label>
-<label class="option"><input type="radio" name="ageGroup" value="pediatric"> Bambino / ragazzo</label>
-</div>
-</div>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
+  <div class="choice-intro"><p>Da dove vuoi partire?</p></div>
 
-<section class="step" data-step="3">
-<h2>Tipo e contesto d'uso</h2>
-<div class="field"><label>Hai già una preferenza?</label>
-<div class="grid">
-<label class="option"><input type="radio" name="preference" value="manual" required> Manuale</label>
-<label class="option"><input type="radio" name="preference" value="power"> Elettronica</label>
-<label class="option"><input type="radio" name="preference" value="unknown"> Non lo so, vorrei essere guidato</label>
-</div></div>
-<div class="field"><label>Dove prevedi di utilizzarla principalmente?</label>
-<select name="context" required>
-<option value="">Seleziona</option>
-<option value="indoor_only">Solo all'interno</option>
-<option value="mostly_indoor">Prevalentemente all'interno</option>
-<option value="both">Sia all'interno che all'esterno</option>
-<option value="mostly_outdoor">Prevalentemente all'esterno</option>
-<option value="outdoor_only">Solo all'esterno</option>
-</select></div>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
+  <div class="choice-grid">
+    <a class="choice-card" href="catalogo/index.html">
+      <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M8 9h8M8 13h8M8 17h5"/></svg></span>
+      <h2>Sai cosa cerchi?</h2>
+      <p>Sfoglia il catalogo prodotti: schede tecniche e confronto dei modelli reali, divisi per categoria.</p>
+      <span class="cta">Vai al catalogo →</span>
+    </a>
+    <a class="choice-card alt" href="configuratore.html">
+      <span class="icon-tile" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l2.5 2.5"/></svg></span>
+      <h2>Se vuoi un aiuto sulla soluzione migliore per te</h2>
+      <p>Rispondi a poche domande guidate: in pochi minuti ricevi un primo orientamento e puoi richiedere una consulenza gratuita.</p>
+      <span class="cta">Inizia il questionario →</span>
+    </a>
+  </div>
 
-<section class="step" data-step="4">
-<h2>Contesto abitativo</h2>
-<div class="field"><label>Tipo di abitazione</label>
-<select name="homeType"><option value="apartment">Appartamento</option><option value="house">Casa indipendente / villetta</option><option value="other">Altro</option></select></div>
-<div class="field"><label>Sono presenti barriere per entrare o uscire?</label>
-<select name="barriers">
-<option value="none">No, accesso senza gradini</option><option value="one_step">Un gradino</option><option value="steps">Più gradini</option><option value="stairs">Una o più rampe di scale</option><option value="unknown">Non lo so</option>
-</select></div>
-<div class="field"><label>È presente una soluzione per superarle?</label>
-<select name="barrierSolution">
-<option value="none">Nessuna / non necessaria</option><option value="elevator">Ascensore</option><option value="stairlift">Montascale</option><option value="ramp">Rampa</option><option value="platform">Piattaforma elevatrice</option><option value="other">Altro</option>
-</select></div>
-<div id="elevatorFields" class="hidden">
-<div class="row">
-<div class="field"><label>Apertura porta ascensore (cm, se nota)</label><input type="number" name="elevatorWidth" min="40" max="200"></div>
-<div class="field"><label>Profondità interna (cm, se nota)</label><input type="number" name="elevatorDepth" min="60" max="300"></div>
-</div>
-</div>
-<div class="field"><label>Ci sono passaggi interni particolarmente stretti?</label>
-<select name="narrowPassages"><option value="no">No</option><option value="yes">Sì</option><option value="unknown">Non lo so</option></select></div>
-<div class="field"><label>Larghezza del passaggio più stretto (cm, se nota)</label><input type="number" name="narrowWidth" min="40" max="200"></div>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
+  <footer class="site-footer">
+    <p>Altra Mobilità — consulenza gratuita sugli ausili per la mobilità.</p>
+  </footer>
 
-<section class="step" data-step="5">
-<h2>Quanto e come verrà utilizzata</h2>
-<div class="field"><label>Quanto prevedi di utilizzare l'ausilio?</label>
-<select name="usage" required>
-<option value="">Seleziona</option>
-<option value="occasional">Solo occasionalmente</option>
-<option value="limited">Alcune volte durante la giornata</option>
-<option value="hours">Diverse ore al giorno</option>
-<option value="most_day">Per gran parte della giornata</option>
-<option value="primary">Come seduta principale per tutta la giornata</option>
-</select></div>
-<div class="field"><label>Se usata in casa, sarà soprattutto:</label>
-<select name="indoorRole">
-<option value="specific">Per alcune attività / spostamenti specifici</option>
-<option value="frequent">Per la maggior parte degli spostamenti</option>
-<option value="primary">Come seduta per le attività quotidiane</option>
-<option value="na">Non pertinente / non lo so</option>
-</select></div>
-<div class="field"><label>Deve essere caricata in automobile?</label>
-<select name="carTransport">
-<option value="frequent">Frequentemente</option><option value="occasional">Occasionalmente</option><option value="rare">Raramente</option><option value="never">Mai</option><option value="unknown">Non lo so</option>
-</select></div>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
-
-<section class="step" data-step="6">
-<h2>Propulsione e accompagnamento</h2>
-<div class="field"><label>La persona riesce a spostarsi autonomamente usando le braccia?</label>
-<select name="propulsion" required>
-<option value="">Seleziona</option>
-<option value="independent">Sì, senza particolare difficoltà</option>
-<option value="fatigue">Sì, ma con fatica</option>
-<option value="short">Solo per brevi tratti</option>
-<option value="none">No</option>
-<option value="unknown">Non lo so</option>
-</select></div>
-<div class="field"><label>Durante gli spostamenti è disponibile un accompagnatore?</label>
-<select name="caregiver" required>
-<option value="">Seleziona</option>
-<option value="always">Sempre o quasi sempre</option>
-<option value="often">Spesso</option>
-<option value="sometimes">Solo occasionalmente</option>
-<option value="rare">Raramente</option>
-<option value="never">Mai</option>
-<option value="unknown">Non lo so</option>
-</select></div>
-<div class="field"><label>Per l'esterno, gli spostamenti saranno soprattutto:</label>
-<select name="outdoorUse">
-<option value="local">Brevi spostamenti vicino casa</option>
-<option value="long">Tragitti più lunghi</option>
-<option value="occasional">Uscite occasionali</option>
-<option value="daily">Spostamenti quotidiani</option>
-<option value="na">Non pertinente / non lo so</option>
-</select></div>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
-
-<section class="step" data-step="7">
-<h2>Controllo posturale</h2>
-<div class="field"><label>La persona riesce a mantenere il tronco stabile quando è seduta?</label>
-<select name="trunk" required>
-<option value="">Seleziona</option>
-<option value="stable">Sì, in autonomia</option>
-<option value="partial">Sì, ma tende a inclinarsi / necessita di qualche sostegno</option>
-<option value="none">No, necessita di sostegno importante</option>
-<option value="unknown">Non lo so</option>
-</select></div>
-<div class="field"><label>La persona riesce a mantenere il capo in posizione autonomamente?</label>
-<select name="head" required>
-<option value="">Seleziona</option>
-<option value="stable">Sì</option>
-<option value="partial">Sì, ma con difficoltà o per periodi limitati</option>
-<option value="none">No, necessita di sostegno</option>
-<option value="unknown">Non lo so</option>
-</select></div>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button><button type="button" class="primary" onclick="nextStep()">Continua</button></div>
-</section>
-
-<section class="step" data-step="8">
-<h2>Risultato della configurazione</h2>
-<div id="resultBox"></div>
-<div class="catalog-note">
-<p class="small">Vuoi vedere i prodotti reali disponibili in questa categoria?</p>
-<a class="catalog-link" href="catalogo/index.html">📋 Guarda il catalogo prodotti →</a>
 </div>
-<div class="contact-panel">
-<h3>Vuoi maggiori informazioni o una consulenza gratuita?</h3>
-<p class="small">Puoi inviare direttamente a noi il riepilogo della configurazione tramite WhatsApp oppure email.</p>
-<div class="row">
-<div class="field"><label>Email</label><input type="email" name="contactEmail" placeholder="La tua email"></div>
-<div class="field"><label>Cellulare</label><input type="tel" name="contactPhone" placeholder="Il tuo cellulare"></div>
-</div>
-<label class="consent-row"><input type="checkbox" name="contactConsent"> <span>Desidero essere ricontattato per ricevere maggiori informazioni o una consulenza gratuita relativa alla configurazione effettuata.</span></label>
-<div class="contact-grid">
-<button type="button" class="contact-btn whatsapp-btn" onclick="sendWhatsApp()">💬 Invia riepilogo via WhatsApp</button>
-<button type="button" class="contact-btn email-btn" onclick="sendEmail()">✉️ Invia riepilogo via email</button>
-</div>
-<div id="summaryPreview" class="summary-preview"></div>
-<p class="quick-note">Il messaggio sarà già compilato con il riepilogo della configurazione: dovrai solo premere “Invia”.</p>
-<div class="actions"><button type="button" class="secondary" onclick="prevStep()">Indietro</button></div>
-</div>
-</section>
-</form>
-</div>
-</div>
-</div>
-
-<script src="script.js"></script>
 </body>
 </html>

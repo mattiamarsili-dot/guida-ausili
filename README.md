@@ -6,9 +6,11 @@ Il configuratore è puramente lato client (HTML/CSS/JS, nessuna dipendenza ester
 
 ## Struttura
 
-- `index.html` — markup del wizard (9 step)
-- `style.css` — stili
+- `index.html` / `home.css` — home page: presentazione di Altra Mobilità e scelta tra catalogo e configuratore
+- `configuratore.html` — markup del wizard (9 step)
+- `style.css` — stili del wizard
 - `script.js` — logica del wizard, motore di scoring e generazione del riepilogo per contatto via WhatsApp/email
+- `catalogo/` — catalogo prodotti, sezione indipendente navigabile anche senza passare dal wizard
 
 ## Uso in locale
 
